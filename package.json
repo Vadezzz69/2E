@@ -1,0 +1,29 @@
+{
+  "name": "komiteanvakoojabot",
+  "version": "1.1.0",
+  "description": "Komitean Discord-botti: tilastot, trollikomennot ja moderointi.",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "deploy": "node deploy-commands.js",
+    "tarkista": "node deploy-commands.js --kuiva",
+    "uusikomento": "node scripts/uusikomento.js",
+    "test": "node scripts/tarkista.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "discord.js": "^14.26.5",
+    "dotenv": "^17.4.2",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

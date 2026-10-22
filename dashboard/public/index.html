@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KOMITEA // Valvontaterminaali</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="topbar">
+    <div class="topbar-left">
+        <span class="dot" id="statusDot"></span>
+        <span class="stamp">KOMITEA</span>
+        <span class="topbar-sub">VALVONTATERMINAALI</span>
+    </div>
+    <div class="topbar-right">
+        <select id="guildSelect" class="guild-select" aria-label="Valitse palvelin"></select>
+        <span class="clock mono" id="clock">--:--:--</span>
+    </div>
+</header>
+
+<main class="wrap">
+
+    <section class="hero">
+        <div class="hero-case">
+            <span class="hero-label">TAPAUS</span>
+            <span class="hero-number mono" id="heroCase">#0000</span>
+        </div>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <span class="hero-stat-value mono" id="statMembers">—</span>
+                <span class="hero-stat-label">Jäsentä valvonnassa</span>
+            </div>
+            <div class="hero-stat">
+                <span class="hero-stat-value mono" id="statVoice">—</span>
+                <span class="hero-stat-label">Aktiivista äänisessiota</span>
+            </div>
+            <div class="hero-stat">
+                <span class="hero-stat-value mono" id="statSuspects">—</span>
+                <span class="hero-stat-label">Avointa epäilyä</span>
+            </div>
+            <div class="hero-stat">
+                <span class="hero-stat-value mono" id="statCases">—</span>
+                <span class="hero-stat-label">Avointa tutkintaa</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="grid">
+
+        <div class="panel panel-large" id="leaderboardPanel">
+            <div class="panel-head">
+                <h2><span class="panel-index mono">01</span> Aktiivisuusrankingit</h2>
+                <div class="panel-controls">
+                    <div class="tabgroup" id="categoryTabs">
+                        <button class="tab active" data-category="viestit">Viestit</button>
+                        <button class="tab" data-category="aani">Äänikanava</button>
+                        <button class="tab" data-category="komennot">Komennot</button>
+                    </div>
+                    <select id="rangeSelect" class="range-select">
+                        <option value="tanaan">Tänään</option>
+                        <option value="viikko">7 päivää</option>
+                        <option value="kuukausi">30 päivää</option>
+                        <option value="kaikki" selected>Koko historia</option>
+                    </select>
+                </div>
+            </div>
+            <ol class="leaderboard" id="leaderboardList"></ol>
+        </div>
+
+        <div class="panel" id="guiltPanel">
+            <div class="panel-head">
+                <h2><span class="panel-index mono">02</span> Syyllisyysaste</h2>
+            </div>
+            <ul class="guilt-list" id="guiltList"></ul>
+        </div>
+
+        <div class="panel" id="suspectsPanel">
+            <div class="panel-head">
+                <h2><span class="panel-index mono">03</span> Epäiltyjen dossier</h2>
+            </div>
+            <ul class="suspect-list" id="suspectList"></ul>
+        </div>
+
+        <div class="panel panel-wide" id="investigationsPanel">
+            <div class="panel-head">
+                <h2><span class="panel-index mono">04</span> Avoimet tutkinnat</h2>
+            </div>
+            <div class="case-files" id="caseFiles"></div>
+        </div>
+
+    </section>
+
+    <footer class="foot mono">
+        <span id="botTag">—</span>
+        <span>·</span>
+        <span>Data päivittyy automaattisesti</span>
+    </footer>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
